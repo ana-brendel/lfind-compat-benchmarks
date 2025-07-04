@@ -55,7 +55,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "make":
         make_tests()
     elif len(sys.argv) > 1 and sys.argv[1] == "make_common":
-        make_tests()
+        make_common()
     else:
         arg = "" if len(sys.argv) == 1 else sys.argv[1]
         flipping(arg)
