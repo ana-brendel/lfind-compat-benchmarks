@@ -33,21 +33,21 @@ def flipping(arg):
 
 def make_tests():
     for suite in os.listdir(path):
-        if not suite.endswith(".py"):
+        if suite.startswith("vfa"):
             full_suite = os.path.join(path,suite)
             tests = os.path.join(full_suite,"tests")
             make_makefile = f"cd {tests} && coq_makefile -f _CoqProject -o Makefile"
-            make = f"cd {tests} && make"
+            make = f"cd {tests} && make && make install"
             os.system(make_makefile)
             os.system(make)
 
 def make_common():
     for suite in os.listdir(path):
-        if not suite.endswith(".py"):
+        if suite.startswith("vfa"):
             full_suite = os.path.join(path,suite)
             common = os.path.join(full_suite,"common")
             make_makefile = f"cd {common} && coq_makefile -f _CoqProject -o Makefile"
-            make = f"cd {common} && make"
+            make = f"cd {common} && make && make install"
             os.system(make_makefile)
             os.system(make)
 
