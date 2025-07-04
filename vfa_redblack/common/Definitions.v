@@ -210,3 +210,6 @@ Fixpoint mindepth (t : tree) : nat := match t with
     | E => 0
     | T _ l _ _ r => S (min (mindepth l) (mindepth r))
     end.
+    
+Definition uncurry {A B C:Type} (f:A -> B -> C)
+  (p:A * B) : C := match p with (x, y) => f x y end.

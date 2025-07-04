@@ -45,10 +45,6 @@ Proof.
     (* HELPER LEMMA $ insert_BST_by_ForallT_insert_1 $ *)
     Admitted.
 (*
-    apply ForallT_insert. assumption. assumption. assumption. assumption. assumption. bdestruct (Nat.ltb x k). constructor. assumption. 
-    (* HELPER LEMMA $ insert_BST_by_ForallT_insert_1 $ *)
-    Admitted.
-(*
     apply ForallT_insert. assumption. assumption. assumption. assumption. constructor.  assert (k=x). lia. rewrite H5. assumption. assert (k=x). lia. rewrite H5. assumption. assumption. assumption.
 Qed.
 *)

@@ -351,30 +351,8 @@ Proof.
    Admitted.
 (*
   apply Permutation_app. assumption. assumption.
-  * simpl. apply perm_skip. 
-  (* HELPER LEMMA $ smash_elems_by_Permutation_app_comm_1 $ *)
-  apply Permutation_app_comm.
-  ++ inversion H1. inversion H2. apply (tree_elems_node (n0::bl++bl0) nil).
-  +++ eapply tree_elems_node. apply H6. apply H13. reflexivity.
-  +++ apply tree_elems_leaf.
-  +++ simpl. inversion H15. rewrite <- H18 in H16. inversion H8. rewrite <- H19 in H9. 
-  (* HELPER LEMMA $ smash_elems_by_app_nil_r_4 $ *)
-  rewrite app_nil_r. 
-  (* HELPER LEMMA $ smash_elems_by_app_nil_r_5 $ *)
-  rewrite app_nil_r in H9.
-  (* HELPER LEMMA $ smash_elems_by_app_nil_r_6 $ *)
-  rewrite app_nil_r in H16. 
-  (* HELPER LEMMA $ smash_elems_by_Permutation_trans_2 $ *)
-  apply (@Permutation_trans _ _ ((n0::bl) ++ (n1::bl0))).
-  * (* HELPER LEMMA $ smash_elems_by_Permutation_app_1 $ *)
-   Admitted.
-(*
-  apply Permutation_app. assumption. assumption.
-  * (* HELPER LEMMA $ smash_elems_by_Permutation_trans_3 $ *)
   apply (@Permutation_trans _ _ ((n1::bl0) ++ (n0::bl))). 
-  (* HELPER LEMMA $ smash_elems_by_Permutation_app_comm_2 $ *)
   apply Permutation_app_comm. simpl. apply perm_skip. 
-  (* HELPER LEMMA $ smash_elems_by_Permutation_app_comm_3 $ *)
   apply Permutation_app_comm.
   -- contradict H0.
   - contradict H.
