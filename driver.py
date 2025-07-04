@@ -31,7 +31,7 @@ def flipping(arg):
                 updated = list(map(rp,test_content))
                 write(full_test,"\n".join(updated))
 
-def make_all():
+def make_tests():
     for suite in os.listdir(path):
         if not suite.endswith(".py"):
             full_suite = os.path.join(path,suite)
@@ -41,9 +41,21 @@ def make_all():
             os.system(make_makefile)
             os.system(make)
 
+def make_common():
+    for suite in os.listdir(path):
+        if not suite.endswith(".py"):
+            full_suite = os.path.join(path,suite)
+            common = os.path.join(full_suite,"common")
+            make_makefile = f"cd {common} && coq_makefile -f _CoqProject -o Makefile"
+            make = f"cd {common} && make"
+            os.system(make_makefile)
+            os.system(make)
+
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "make":
-        make_all()
+        make_tests()
+    elif len(sys.argv) > 1 and sys.argv[1] == "make_common":
+        make_tests()
     else:
         arg = "" if len(sys.argv) == 1 else sys.argv[1]
         flipping(arg)
