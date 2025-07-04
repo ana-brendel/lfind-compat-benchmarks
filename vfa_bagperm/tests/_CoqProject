@@ -1,0 +1,13 @@
+-R . vfa_bagperm_making
+
+bag_perm_by_bag_eqv_uncons.v
+bag_perm_by_count_insert_other.v
+bag_perm_by_bag_cons_inv.v
+bag_eqv_iff_perm_by_bag_perm.v
+bag_perm_by_Permutation_middle.v
+perm_bag_by_bag_eqv_cons.v
+bag_eqv_iff_perm_by_perm_bag.v
+perm_bag_by_bag_eqv_trans.v
+bag_perm_by_app_comm_cons_1.v
+sort_bag_by_insert_bag.v
+bag_perm_by_app_comm_cons_2.v

@@ -1,0 +1,13 @@
+-R . vfa_sort_making
+
+sort_perm_by_insert_perm.v
+insertion_sort_correct_by_sort_perm.v
+insert_sortedd_by_sortedd_cons_1.v
+insert_sorted_by_insert_swap.v
+sortedd_cons_by_nth_succ_2.v
+sort_sortedd_by_insert_sortedd.v
+sorted_sortedd_by_sortedd_cons.v
+insertion_sort_correct_by_sort_sorted.v
+insert_sortedd_by_sortedd_cons_2.v
+sortedd_cons_by_nth_succ_1.v
+sort_sorted_by_insert_sorted.v

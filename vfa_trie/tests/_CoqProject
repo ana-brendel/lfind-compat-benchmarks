@@ -1,0 +1,19 @@
+-R . vfa_trie_making
+
+addc_correct_by_succ_correct_4.v
+compare_correct_by_positive2nat_pos_1.v
+look_ins_other_by_look_leaf_5.v
+look_ins_other_by_look_leaf_1.v
+addc_correct_by_succ_correct_3.v
+compare_correct_by_positive2nat_pos_2.v
+look_ins_other_by_look_leaf_6.v
+look_ins_other_by_look_leaf_2.v
+addc_correct_by_succ_correct_6.v
+addc_correct_by_succ_correct_2.v
+compare_correct_by_positive2nat_pos_3.v
+add_correct_by_positive2nat_pos_1.v
+look_ins_other_by_look_leaf_3.v
+addc_correct_by_succ_correct_5.v
+compare_correct_by_positive2nat_pos_4.v
+addc_correct_by_succ_correct_1.v
+look_ins_other_by_look_leaf_4.v
