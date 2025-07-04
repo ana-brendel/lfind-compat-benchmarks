@@ -1,11 +1,15 @@
 import os
 import sys
+from pathlib import Path
 
-read = lambda x: open(x, "r").read().split("\n")
+# def read(x):
+#     f = open(x, "r")
+#     content = f.read()
+#     f.close()
+#     return content.split("\n")
+
 def read(x):
-    f = open(x, "r")
-    content = f.read()
-    f.close()
+    content = Path(x).read_text()
     return content.split("\n")
 
 def write(file,content):
