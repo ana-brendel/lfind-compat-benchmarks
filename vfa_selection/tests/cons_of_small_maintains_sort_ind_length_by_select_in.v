@@ -122,7 +122,7 @@ Proof.
     - intros. simpl. destruct bl.
     -- apply sorted_1.
     -- simpl in H. inversion H. destruct (select n0 bl) eqn:Q. inversion Q.
-        Admitted.
+        lfind. Admitted.
 
     (* apply select_in in Q. 
     apply sorted_cons. 

@@ -105,7 +105,7 @@ Proof.
     contradict H0. discriminate.
     simpl. inversion H0. bdestruct (Nat.ltb k x). 
     (* HELPER LEMMA $ elements_complete_by_in_or_app_1 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     apply in_or_app. left. apply IHBST1. assumption. simpl in H1. bdestruct (Nat.ltb k x). assumption. contradict H5. lia.
     bdestruct (Nat.ltb x k). 

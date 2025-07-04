@@ -90,7 +90,7 @@ Proof.
     - contradiction.
     - inversion H0. 
     -- lia.
-    --     Admitted.
+    --     lfind. Admitted.
 
     (* eapply Forall_forall. eassumption. eassumption.
 Qed. *)

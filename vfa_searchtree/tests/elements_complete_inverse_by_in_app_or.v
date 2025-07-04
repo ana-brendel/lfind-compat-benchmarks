@@ -121,7 +121,7 @@ Proof.
 Qed.
 
 Lemma elements_preserves_forall : forall (P : nat -> value -> Prop) (t : tree), ForallT P t -> Forall (uncurry P) (elements t).
-Proof.    Admitted.
+Proof.    lfind. Admitted.
 
 Lemma elements_preserves_forall_fixed : forall (t : tree), ForallT (fun _ v => v = Blue) t -> Forall (uncurry (fun _ v => v = Blue)) (elements t).
 Proof.
@@ -133,7 +133,7 @@ Qed.
 
 Lemma elements_preserves_relation : forall (k k' : nat) (v : value) (t : tree) (R : nat -> nat -> Prop),
     ForallT (fun y _ => R y k') t -> In (k, v) (elements t) -> R k k'.
-Proof.    Admitted.
+Proof.    lfind. Admitted.
 
 Lemma elements_preserves_relation_fixed : forall (k k' : nat) (v : value) (t : tree),
     ForallT (fun y _ => (fun x y => x <= y) y k') t -> In (k, v) (elements t) -> (fun x y => x <= y) k k'.
@@ -191,7 +191,7 @@ Proof.
     - simpl in H1. contradiction.
     - simpl in H1. 
     (* HELPER LEMMA $ elements_complete_inverse_by_in_app_or $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     apply in_app_or in H1. inversion H1.
     apply IHBST1. inversion H0. bdall.

@@ -36,7 +36,7 @@ Lemma ForallT_greater : forall (t : tree) k k0, ForallT (fun k' _ => k' > k) t  
 Proof.
     intros. 
     (* HELPER LEMMA $ ForallT_greater_by_ForallT_imp $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     eapply ForallT_imp; eauto.
     intros. simpl in H1. lia.

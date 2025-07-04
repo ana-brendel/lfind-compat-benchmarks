@@ -359,7 +359,7 @@ Proof.
   (* HELPER LEMMA $ smash_elems_by_app_nil_r_4 $ *)
   rewrite app_nil_r. 
   (* HELPER LEMMA $ smash_elems_by_app_nil_r_5 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   rewrite app_nil_r in H9.
   (* HELPER LEMMA $ smash_elems_by_app_nil_r_6 $ *)

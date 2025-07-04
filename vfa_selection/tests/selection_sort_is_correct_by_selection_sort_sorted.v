@@ -162,7 +162,7 @@ Theorem selection_sort_is_correct : is_a_sorting_algorithm selection_sort.
 Proof. 
     unfold is_a_sorting_algorithm. split. 
     apply selection_sort_perm.
-        Admitted.
+        lfind. Admitted.
 
     (* apply selection_sort_sorted.
 Qed. *)

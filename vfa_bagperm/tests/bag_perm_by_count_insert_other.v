@@ -102,7 +102,7 @@ Proof.
   (* HELPER LEMMA $ bag_perm_by_app_comm_cons_1 $ *)
   rewrite app_comm_cons.
   (* HELPER LEMMA $ bag_perm_by_count_insert_other $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   rewrite <- (count_insert_other (n :: x) x0 a n0). rewrite <- H.
   simpl. bdestruct (a =? n0). lia. reflexivity.  

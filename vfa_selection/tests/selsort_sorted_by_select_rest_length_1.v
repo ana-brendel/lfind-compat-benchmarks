@@ -149,7 +149,7 @@ Proof.
     -- simpl in H. lia.
     -- simpl. destruct (select n0 al) eqn:Q. apply cons_of_small_maintains_sort.
     --- simpl in H. 
-        Admitted.
+        lfind. Admitted.
     
     (* apply select_rest_length in Q. rewrite <- Q. lia.
     --- eapply select_smallest. eauto.

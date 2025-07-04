@@ -89,7 +89,7 @@ Proof.
   apply positive2nat_pos. lia.
   assert (positive2nat y > 0). 
   (* HELPER LEMMA $ compare_correct_by_positive2nat_pos_4 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply positive2nat_pos. lia.
   reflexivity.

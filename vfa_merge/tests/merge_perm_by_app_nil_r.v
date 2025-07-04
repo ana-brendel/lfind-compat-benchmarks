@@ -120,7 +120,7 @@ Proof.
   - intros. rewrite merge_nil_l. simpl. reflexivity.
   - induction l2.
   + simpl. 
-      Admitted.
+      lfind. Admitted.
   (* rewrite app_nil_r. reflexivity.
   + unfold merge. fold merge. destruct (Nat.leb a a0).
   ++ apply perm_skip. apply IHl1.

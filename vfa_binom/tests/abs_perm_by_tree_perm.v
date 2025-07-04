@@ -281,7 +281,7 @@ Proof.
   (* HELPER LEMMA $ abs_perm_by_Permutation_app $ *)
   apply Permutation_app.
   (* HELPER LEMMA $ abs_perm_by_tree_perm $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   eapply tree_perm; eassumption.
   (* HELPER LEMMA $ abs_perm_by_priqueue_perm $ *)

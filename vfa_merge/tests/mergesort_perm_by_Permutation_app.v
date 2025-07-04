@@ -144,7 +144,7 @@ Proof.
   apply Permutation_trans with (l' := mergesort l1 ++ mergesort l2).
   apply Permutation_trans with (l' := l1 ++ l2).
   apply split_perm. assumption.
-      Admitted.
+      lfind. Admitted.
   (* apply Permutation_app. assumption. assumption. 
   apply merge_perm.
 Qed.  *)

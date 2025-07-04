@@ -28,7 +28,7 @@ path = os.getcwd()
 def flipping(arg):
     add_tactic = arg == "add_tactic"
     for suite in os.listdir(path):
-        if not suite.endswith(".py"):
+        if suite.startswith("vfa"):
             full_suite = os.path.join(path,suite)
             tests = os.path.join(full_suite,"tests")
             for test in os.listdir(tests):

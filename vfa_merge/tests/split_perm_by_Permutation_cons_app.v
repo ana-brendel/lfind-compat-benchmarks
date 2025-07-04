@@ -40,7 +40,7 @@ Proof.
   - intros. inversion H. auto.
   - intros. inversion H. destruct (split l). inversion H1.
   simpl. apply perm_skip. 
-      Admitted.
+      lfind. Admitted.
 
 (* Lemma split_perm : forall {X:Type} (l l1 l2: list X),
     split l = (l1,l2) -> Permutation l (l1 ++ l2).
@@ -50,6 +50,6 @@ Proof.
   - intros. inversion H. auto.
   - intros. inversion H. destruct (split l). inversion H1.
   simpl. apply perm_skip. 
-      Admitted. *)
+      lfind. Admitted. *)
   (* apply Permutation_cons_app. apply IHl. reflexivity.
 Qed. *)

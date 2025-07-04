@@ -123,7 +123,7 @@ Proof.
     --  eapply le_all__le_one. eauto. 
     apply Permutation_in with (l := selsort bl n).
     symmetry. 
-        Admitted.
+        lfind. Admitted.
 
     (* apply selsort_perm. eauto.
     rewrite K. simpl. auto. 

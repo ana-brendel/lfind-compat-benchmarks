@@ -237,7 +237,7 @@ Proof.
   induction q; intros;
   inversion H0; subst.
   + (* HELPER LEMMA $ priqueue_elems_ext_by_Permutation_nil $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply Permutation_nil in H.
   subst. constructor. 

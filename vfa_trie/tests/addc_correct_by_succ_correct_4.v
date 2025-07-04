@@ -43,7 +43,7 @@ Proof.
   intros. simpl. destruct c. destruct q.
   simpl.  
   (* HELPER LEMMA $ addc_correct_by_succ_correct_4 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   rewrite succ_correct. lia.
   simpl. 

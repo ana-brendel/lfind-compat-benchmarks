@@ -224,7 +224,7 @@ Proof.
   eapply Permutation_trans with (l' := (n :: bl0 ++ br0)).
   apply perm_skip.
   (* HELPER LEMMA $ tree_perm_by_Permutation_app $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply Permutation_app.
   assumption. assumption.

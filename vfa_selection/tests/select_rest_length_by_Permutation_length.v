@@ -39,7 +39,7 @@ Lemma select_rest_length : forall x l y r, select x l = (y, r) -> length l = len
 Proof.
     intros. 
     apply select_perm in H.
-        Admitted.
+        lfind. Admitted.
 
     (* apply Permutation_length in H. 
     auto.

@@ -51,7 +51,7 @@ Qed.
 Lemma balance_BST : forall (c : color) (l : tree) (k : nat) (v : value) (r : tree),
     ForallT (fun k' _ => k' < k) l -> ForallT (fun k' _ => k' > k) r -> BST l -> BST r -> BST (balance c l k v r).
 Proof.
-    intros. unfold balance.    Admitted.
+    intros. unfold balance.    lfind. Admitted.
     (* repeat
     (match goal with
         |  |- BST  (match ?c with Red => _ | Black => _ end)  => destruct c
@@ -67,7 +67,7 @@ Qed. *)
 Lemma balanceP : forall (P : nat -> value -> Prop) (c : color) (l r : tree) (k : nat) (v : value),
     ForallT P l -> ForallT P r -> P k v -> ForallT P (balance c l k v r).
 Proof.
-    intros. unfold balance.    Admitted.
+    intros. unfold balance.    lfind. Admitted.
     (* repeat
     (match goal with
         |  |- ForallT P (match ?c with Red => _ | Black => _ end)  => destruct c
@@ -80,7 +80,7 @@ Proof.
 Qed. *)
 
 Lemma insP : forall (P : nat -> value -> Prop) (t : tree) (k : nat) (v : value), ForallT P t -> P k v -> ForallT P (ins k v t).
-Proof.    Admitted.
+Proof.    lfind. Admitted.
 
 Lemma insP_fixed : forall (t : tree) (k : nat) (v : value), ForallT (fun x _ => 0 < x) t -> (fun x _ => 0 < x) k v -> ForallT (fun x _ => 0 < x) (ins k v t).
 Proof.
@@ -136,7 +136,7 @@ Qed.
 
 Lemma elements_trP : forall (P : nat -> value -> Prop) (t : tree) (l : list (nat * value)),
     ForallT P t -> Forall (uncurry P) l -> Forall (uncurry P) (elements_tr t l). 
-Proof.    Admitted.
+Proof.    lfind. Admitted.
 
 Lemma elements_trP_fixed : forall (t : tree) (l : list (nat * value)),
     ForallT (fun x _ => 2 < x) t -> Forall (uncurry (fun x _ => 2 < x)) l -> Forall (uncurry (fun x _ => 2 < x)) (elements_tr t l).
@@ -150,7 +150,7 @@ Qed.
 
 Lemma elementsP : forall (P : nat -> value -> Prop) (t : tree),
     ForallT P t -> Forall (uncurry P) (elements t).
-Proof.    Admitted.
+Proof.    lfind. Admitted.
 
 Lemma elementsP_fixed : forall (t : tree), ForallT (fun x _ => 2 < x) t -> Forall (uncurry (fun x _ => 2 < x)) (elements t).
 Proof.
@@ -181,7 +181,7 @@ Lemma balance_lookup : forall default (c : color) (k k' : nat) (v : value) (l r 
     BST l -> BST r -> ForallT (fun k' _ => k' < k) l -> ForallT (fun k' _ => k' > k) r ->
     lookup default k' (balance c l k v r) = if k' <? k then lookup default k' l else if k <? k' then lookup default k' r else v.
 Proof.
-    intros. unfold balance. induction l.    Admitted.
+    intros. unfold balance. induction l.    lfind. Admitted.
 
 Lemma lookup_ins_eq : forall (default : value) (t : tree) (k : nat) (v : value), BST t -> lookup default k (ins k v t) = v.
 Proof.
@@ -256,7 +256,7 @@ Proof.
     - exists O. simpl. constructor.
     - simpl. exists (S n). constructor. 
     (* HELPER LEMMA $ RB_blacken_root_by_RB_blacken_parent_1 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     apply RB_blacken_parent. assumption. 
     (* HELPER LEMMA $ RB_blacken_root_by_RB_blacken_parent_2 $ *)

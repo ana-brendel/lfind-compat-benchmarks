@@ -283,7 +283,7 @@ Proof.
   (* HELPER LEMMA $ abs_perm_by_tree_perm $ *)
   eapply tree_perm; eassumption.
   (* HELPER LEMMA $ abs_perm_by_priqueue_perm $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   eapply priqueue_perm; eassumption.
   rewrite H9. reflexivity.

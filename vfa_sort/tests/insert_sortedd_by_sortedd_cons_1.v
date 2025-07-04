@@ -129,7 +129,7 @@ Proof.
   - simpl. unfold sortedd. intros. simpl in H0. lia.
   - simpl. bdestruct (a <=? a0).
     * (* HELPER LEMMA $ insert_sortedd_by_sortedd_cons_1 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     apply sortedd_cons. assumption. assumption.
     * remember (insert a l) as l0. destruct l0.

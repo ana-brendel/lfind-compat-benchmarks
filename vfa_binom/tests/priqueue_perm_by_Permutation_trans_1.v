@@ -254,7 +254,7 @@ Proof.
   + inversion H; subst.
   inversion H0; subst.
   (* HELPER LEMMA $ priqueue_perm_by_Permutation_trans_1 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   eapply Permutation_trans; try eassumption.
   (* HELPER LEMMA $ priqueue_perm_by_Permutation_trans_2 $ *)

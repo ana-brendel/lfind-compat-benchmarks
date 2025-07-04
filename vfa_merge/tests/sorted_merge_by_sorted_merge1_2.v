@@ -115,6 +115,6 @@ Proof.
                if a <=? a2 then a :: merge l1 l0 else a2 :: merge_aux l2'
            end) l2)). reflexivity. rewrite <- P. clear P.
 
-        Admitted.
+        lfind. Admitted.
     (* apply sorted_merge1. lia. inversion H0. assumption. apply IHl2. inversion H0. assumption.
 Qed. *)

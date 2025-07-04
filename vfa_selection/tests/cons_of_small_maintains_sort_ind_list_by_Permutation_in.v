@@ -121,7 +121,7 @@ Proof.
     - apply sorted_1.
     - apply sorted_cons.
     --  eapply le_all__le_one. eauto. 
-        Admitted.
+        lfind. Admitted.
 
     (* apply Permutation_in with (l := selsort bl n).
     symmetry. 

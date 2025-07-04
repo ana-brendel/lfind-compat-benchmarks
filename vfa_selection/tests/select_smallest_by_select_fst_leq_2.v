@@ -102,7 +102,7 @@ Proof.
     apply select_fst_leq in H2. inversion H. rewrite <- H3. apply Forall_cons. lia. assumption.
     -- fold select in H. destruct (select a al) eqn:Q. inversion Q. apply IHal in Q.
     (* inversion H. rewrite H4. rewrite H3 in H2. rewrite H3 in Q. clear H3. clear H. *)
-        Admitted.
+        lfind. Admitted.
 
     (* apply select_fst_leq in H2. inversion H. rewrite <- H3. apply Forall_cons. lia. assumption.
 Qed. *)

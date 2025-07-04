@@ -124,7 +124,7 @@ Proof.
   rewrite app_nil_r. reflexivity.
   + unfold merge. fold merge. destruct (Nat.leb a a0).
   ++ apply perm_skip. apply IHl1.
-  ++     Admitted.
+  ++     lfind. Admitted.
   (* apply Permutation_trans with (l' := (a0 :: l2) ++ (a :: l1)).
     * apply Permutation_app_comm.
     * simpl. apply perm_skip. 

@@ -110,7 +110,7 @@ Proof.
     (* HELPER LEMMA $ elements_complete_by_in_or_app_2 $ *)
     apply in_or_app. right. simpl. right. apply IHBST2. assumption. simpl in H1. bdestruct (Nat.ltb k x). contradict H8. lia. bdestruct (Nat.ltb x k).  assumption. contradict H7. lia.
     (* HELPER LEMMA $ elements_complete_by_in_or_app_3 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     apply in_or_app. right. simpl. left. inversion H1. bdestruct (Nat.eqb x k). rewrite H9. simpl. bdall. contradict H9. lia.
 Qed.

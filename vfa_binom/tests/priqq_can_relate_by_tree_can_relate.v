@@ -306,7 +306,7 @@ Proof.
   apply priqueue_elems_nil.
   - intros. inversion H. assert (exists al, tree_elems a al).
   -- (* HELPER LEMMA $ priqq_can_relate_by_tree_can_relate $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply tree_can_relate.
   -- inversion H2. apply IHp in H1. inversion H1. exists (x++x0). 

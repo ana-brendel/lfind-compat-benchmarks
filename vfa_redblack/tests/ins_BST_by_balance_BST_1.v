@@ -51,7 +51,7 @@ Qed.
 Lemma balance_BST : forall (c : color) (l : tree) (k : nat) (v : value) (r : tree),
     ForallT (fun k' _ => k' < k) l -> ForallT (fun k' _ => k' > k) r -> BST l -> BST r -> BST (balance c l k v r).
 Proof.
-    intros. unfold balance.    Admitted.
+    intros. unfold balance.    lfind. Admitted.
     (* repeat
     (match goal with
         |  |- BST  (match ?c with Red => _ | Black => _ end)  => destruct c
@@ -67,7 +67,7 @@ Qed. *)
 Lemma balanceP : forall (P : nat -> value -> Prop) (c : color) (l r : tree) (k : nat) (v : value),
     ForallT P l -> ForallT P r -> P k v -> ForallT P (balance c l k v r).
 Proof.
-    intros. unfold balance.    Admitted.
+    intros. unfold balance.    lfind. Admitted.
     (* repeat
     (match goal with
         |  |- ForallT P (match ?c with Red => _ | Black => _ end)  => destruct c
@@ -80,7 +80,7 @@ Proof.
 Qed. *)
 
 Lemma insP : forall (P : nat -> value -> Prop) (t : tree) (k : nat) (v : value), ForallT P t -> P k v -> ForallT P (ins k v t).
-Proof.    Admitted.
+Proof.    lfind. Admitted.
 
 Lemma insP_fixed : forall (t : tree) (k : nat) (v : value), ForallT (fun x _ => 0 < x) t -> (fun x _ => 0 < x) k v -> ForallT (fun x _ => 0 < x) (ins k v t).
 Proof.
@@ -102,7 +102,7 @@ Proof.
     - simpl. constructor. repeat split; auto. repeat split; auto. constructor. constructor.
     - simpl. bdestruct (k <? k0). 
     -- (* HELPER LEMMA $ ins_BST_by_balance_BST_1 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     apply balance_BST.
     --- (* HELPER LEMMA $ ins_BST_by_insP_1 $ *)

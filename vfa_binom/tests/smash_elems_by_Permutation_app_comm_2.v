@@ -369,7 +369,7 @@ Proof.
   * (* HELPER LEMMA $ smash_elems_by_Permutation_trans_3 $ *)
   apply (@Permutation_trans _ _ ((n1::bl0) ++ (n0::bl))). 
   (* HELPER LEMMA $ smash_elems_by_Permutation_app_comm_2 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply Permutation_app_comm. simpl. apply perm_skip. 
   (* HELPER LEMMA $ smash_elems_by_Permutation_app_comm_3 $ *)

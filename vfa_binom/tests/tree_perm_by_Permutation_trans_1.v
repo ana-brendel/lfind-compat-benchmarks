@@ -219,7 +219,7 @@ Proof.
   apply (IHt1 bl bl0) in H4; auto.
   apply (IHt2 br br0) in H6; auto.
   (* HELPER LEMMA $ tree_perm_by_Permutation_trans_1 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   eapply Permutation_trans; try eassumption.
   (* HELPER LEMMA $ tree_perm_by_Permutation_trans_2 $ *)

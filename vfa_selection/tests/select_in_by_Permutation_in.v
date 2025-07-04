@@ -108,7 +108,7 @@ Lemma select_in : forall al bl x y, select x al = (y, bl) -> In y (x :: al).
 Proof.
     intros.
     apply select_perm in H.
-        Admitted.
+        lfind. Admitted.
 
     (* eapply Permutation_in.
     symmetry in H.

@@ -129,7 +129,7 @@ Proof.
     * 
     apply Permutation_app_comm.
     * simpl. apply perm_skip. 
-        Admitted.
+        lfind. Admitted.
     (* apply Permutation_trans with (l' := (a :: l1) ++ l2).
     ** apply Permutation_app_comm.
     ** assumption.

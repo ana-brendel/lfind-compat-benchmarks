@@ -176,7 +176,7 @@ Proof.
   ++ inversion H0. split.
   +++ simpl. split. left. reflexivity. inversion H. assumption.
   +++ (* HELPER LEMMA $ delete_max_aux_priq_by_unzip_preq $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply (unzip_preq _ _ n n0). inversion H. inversion H1. discriminate. assumption. reflexivity.
   -- destruct (delete_max_aux m p) eqn : D. apply (IHp (S n)) in D.

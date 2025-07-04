@@ -152,6 +152,6 @@ Theorem mergesort_correct: is_a_sorting_algorithm mergesort.
 Proof.
   split.
   apply mergesort_perm.
-      Admitted.
+      lfind. Admitted.
   (* apply mergesort_sorts.
 Qed. *)

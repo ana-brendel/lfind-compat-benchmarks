@@ -59,7 +59,7 @@ Theorem add_correct: forall (p q: positive), positive2nat (add p q) = positive2n
 Proof. 
   intros. unfold add. 
   (* HELPER LEMMA $ add_correct_by_positive2nat_pos_1 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply addc_correct. 
 Qed.

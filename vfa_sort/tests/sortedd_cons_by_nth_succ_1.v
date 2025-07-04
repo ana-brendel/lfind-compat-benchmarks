@@ -86,7 +86,7 @@ Proof.
     assert (exists i', i = S i'). destruct i. lia. exists i. reflexivity. 
     inversion H3. rewrite H4. 
     (* HELPER LEMMA $ sortedd_cons_by_nth_succ_1 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     rewrite nth_succ. 
     (* HELPER LEMMA $ sortedd_cons_by_nth_succ_2 $ *)

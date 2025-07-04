@@ -118,7 +118,7 @@ Lemma merge_perm: forall (l1 l2: list nat), Permutation (l1 ++ l2) (merge l1 l2)
 Proof. 
   intros. generalize dependent l2. induction l1.
   - intros. 
-      Admitted.
+      lfind. Admitted.
   (* rewrite merge_nil_l. simpl. reflexivity.
   - induction l2.
   + simpl. rewrite app_nil_r. reflexivity.

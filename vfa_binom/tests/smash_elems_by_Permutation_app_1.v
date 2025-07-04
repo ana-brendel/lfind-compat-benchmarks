@@ -348,7 +348,7 @@ Proof.
   (* HELPER LEMMA $ smash_elems_by_Permutation_trans_1 $ *)
   apply (@Permutation_trans _ _ ((n0::bl) ++ (n1::bl0))).
   * (* HELPER LEMMA $ smash_elems_by_Permutation_app_1 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply Permutation_app. assumption. assumption.
   apply (@Permutation_trans _ _ ((n1::bl0) ++ (n0::bl))). 

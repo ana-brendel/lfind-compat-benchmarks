@@ -151,7 +151,7 @@ Proof.
     --- simpl in H. apply select_rest_length in Q. rewrite <- Q. lia.
     --- eapply select_smallest. eauto.
     --- apply IHn. 
-        Admitted.
+        lfind. Admitted.
     
     (* apply select_rest_length in Q. rewrite <- Q. simpl in H. lia.
 Qed. *)

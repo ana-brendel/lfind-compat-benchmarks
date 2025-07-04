@@ -108,7 +108,7 @@ Proof.
   (* HELPER LEMMA $ bag_perm_by_app_comm_cons_2 $ *)
   rewrite app_comm_cons in H8. clear H2. clear H3.
   (* HELPER LEMMA $ bag_perm_by_Permutation_middle $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   rewrite Permutation_middle in H8. simpl in H8. rewrite <- H6 in H8. assumption. lia.
 Qed.

@@ -120,7 +120,7 @@ Proof.
     intros. induction (selsort bl n) eqn:Eq.
     - apply sorted_1.
     - apply sorted_cons.
-    --     Admitted.
+    --     lfind. Admitted.
     
     (* eapply le_all__le_one. eauto. 
     apply Permutation_in with (l := selsort bl n).

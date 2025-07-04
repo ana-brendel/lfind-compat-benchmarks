@@ -89,7 +89,7 @@ Proof.
   induction p. 
   - intros. simpl. 
   (* HELPER LEMMA $ join_valid_by_carry_valid_1 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply carry_valid. assumption. assumption.
   - intros. destruct a. 

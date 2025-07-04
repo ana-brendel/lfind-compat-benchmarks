@@ -133,7 +133,7 @@ Proof.
     * remember (insert a l) as l0. destruct l0.
       + contradict Heql0. destruct l. simpl. discriminate. simpl. (bdestruct (a <=? n)). discriminate. discriminate.
       + (* HELPER LEMMA $ insert_sortedd_by_sortedd_cons_2 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
       apply sortedd_cons. destruct l. simpl in Heql0. inversion Heql0. lia. simpl in Heql0. bdestruct (a <=? n0). 
       inversion Heql0. lia. inversion Heql0. unfold sortedd in H. apply (H 0 1). simpl. lia. apply IHl.

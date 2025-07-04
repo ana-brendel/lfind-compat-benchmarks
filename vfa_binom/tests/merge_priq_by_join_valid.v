@@ -144,7 +144,7 @@ Theorem merge_priq:  forall p q, priq p -> priq q -> priq (merge p q).
 Proof.
  intros. unfold merge. 
  (* HELPER LEMMA $ merge_priq_by_join_valid $ *)
-   Admitted.
+   lfind. Admitted.
 (*
  apply join_valid; auto.
 Qed.

@@ -117,7 +117,7 @@ Proof.
   +++ left. reflexivity.
   +++ apply IHp. inversion H. assumption. inversion H0. assumption. right. 
   (* HELPER LEMMA $ join_valid_by_smash_valid_3 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply smash_valid. 
   -- inversion H. inversion H2. discriminate. inversion H1. discriminate. assumption.

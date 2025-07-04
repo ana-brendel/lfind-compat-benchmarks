@@ -351,7 +351,7 @@ Proof.
   apply Permutation_app. assumption. assumption.
   * simpl. apply perm_skip. 
   (* HELPER LEMMA $ smash_elems_by_Permutation_app_comm_1 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply Permutation_app_comm.
   ++ inversion H1. inversion H2. apply (tree_elems_node (n0::bl++bl0) nil).

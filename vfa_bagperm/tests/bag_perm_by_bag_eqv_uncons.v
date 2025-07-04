@@ -91,7 +91,7 @@ Proof.
   assert (count a (a :: al) = count a []). apply H. simpl in H0. bdestruct (a =? a). lia. lia.
   bdestruct (a =? n). rewrite H0. constructor. apply IHal. rewrite H0 in H. 
   (* HELPER LEMMA $ bag_perm_by_bag_eqv_uncons $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   apply (bag_eqv_uncons n). assumption.
   unfold bag_eqv in H. assert (count a (a :: al) = count a (n :: bl)). apply H. simpl in H1. 

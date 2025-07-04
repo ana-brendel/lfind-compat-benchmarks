@@ -59,7 +59,7 @@ Proof.
     simpl.
     destruct (select n0 l) eqn: Q.
     apply perm_trans with (n1 :: l0).
-    ---     Admitted.
+    ---     lfind. Admitted.
     
     (* apply select_perm. assumption.
     --- apply perm_skip. apply IHn. inversion H.

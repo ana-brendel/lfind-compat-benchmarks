@@ -106,7 +106,7 @@ Proof.
   simpl. bdestruct (a =? n0). lia. reflexivity.  
   assumption. apply (perm_skip a) in H8. 
   (* HELPER LEMMA $ bag_perm_by_app_comm_cons_2 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   rewrite app_comm_cons in H8. 
   (* HELPER LEMMA $ bag_perm_by_Permutation_middle $ *)

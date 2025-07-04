@@ -112,7 +112,7 @@ Proof.
   induction j; destruct k; intros; simpl; auto.
   - destruct t. rewrite (IHj k v Leaf). 
   (* HELPER LEMMA $ look_ins_other_by_look_leaf_1 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply look_leaf. unfold not. intros. rewrite H0 in H. contradiction. 
     rewrite (IHj k v t2). reflexivity. unfold not. intros. rewrite H0 in H. contradiction. 

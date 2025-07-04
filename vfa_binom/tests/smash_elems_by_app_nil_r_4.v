@@ -357,7 +357,7 @@ Proof.
   +++ apply tree_elems_leaf.
   +++ simpl. inversion H15. rewrite <- H18 in H16. inversion H8. rewrite <- H19 in H9. 
   (* HELPER LEMMA $ smash_elems_by_app_nil_r_4 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   rewrite app_nil_r. 
   (* HELPER LEMMA $ smash_elems_by_app_nil_r_5 $ *)

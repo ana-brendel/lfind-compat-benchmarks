@@ -86,7 +86,7 @@ Theorem maybe_swap_correct: forall al, Permutation al (maybe_swap al) /\ first_l
 Proof.
   intros. split.
   - (* HELPER LEMMA $ maybe_swap_correct_by_maybe_swap_perm $ *)
-    Admitted.
+    lfind. lfind. Admitted.
 (*
   apply maybe_swap_perm.
   - unfold maybe_swap.

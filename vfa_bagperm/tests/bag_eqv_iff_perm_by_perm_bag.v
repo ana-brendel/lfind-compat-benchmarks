@@ -117,7 +117,7 @@ Proof.
   (* HELPER LEMMA $ bag_eqv_iff_perm_by_bag_perm $ *)
   apply bag_perm. 
   (* HELPER LEMMA $ bag_eqv_iff_perm_by_perm_bag $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   apply perm_bag.
 Qed.

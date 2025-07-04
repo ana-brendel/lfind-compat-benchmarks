@@ -100,7 +100,7 @@ Proof.
     + simpl. intros. assumption.
     + intro. simpl. bdestruct (a <=? a0).
     ++ destruct l1. simpl. apply sorted_cons. assumption. assumption. 
-        Admitted.
+        lfind. Admitted.
     (* apply sorted_merge1. inversion H. assumption. assumption. apply IHl1. inversion H. assumption. assumption.
     ++ destruct l2. apply sorted_cons. lia. assumption.
     apply sorted_merge1. lia. inversion H0. assumption. apply IHl2. inversion H0. assumption.

@@ -93,7 +93,7 @@ Proof.
     -- eapply Forall_forall. eassumption. eassumption.
 Qed.
 
-Lemma helper: forall al l x y, (select x al = (y, l) -> y <=* x :: al). Proof.    Admitted.
+Lemma helper: forall al l x y, (select x al = (y, l) -> y <=* x :: al). Proof.    lfind. Admitted.
 
 Lemma select_smallest: forall al bl x y, select x al = (y, bl) -> y <=* bl.
 Proof. 
@@ -102,7 +102,7 @@ Proof.
     - intros. unfold select in H. bdestruct (x <=? a).
     -- fold select in H. destruct (select x al) eqn:Q. inversion Q. apply IHal in Q.
     (* inversion H. clear H. rewrite <- H3. clear H3. clear H4. *)
-        Admitted.
+        lfind. Admitted.
 
     (* apply select_fst_leq in H2. inversion H. rewrite <- H3. apply Forall_cons. lia. assumption.
     -- fold select in H. destruct (select a al) eqn:Q. inversion Q. apply IHal in Q.

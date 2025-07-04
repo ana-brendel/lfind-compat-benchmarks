@@ -110,6 +110,6 @@ Proof.
   intros. apply mergesort_ind; intros.
   - apply sorted_nil.
   - apply sorted_1.
-  -     Admitted.
+  -     lfind. Admitted.
   (* apply sorted_merge. assumption. assumption.
 Qed. *)

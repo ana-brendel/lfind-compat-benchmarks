@@ -29,6 +29,6 @@ Proof.
   - simpl. reflexivity.
   - simpl. eapply perm_trans. apply perm_skip. apply IHl.
   (* HELPER LEMMA $ sort_perm_by_insert_perm $ *)
-      Admitted.
+      lfind. Admitted.
   (* apply insert_perm.
 Qed. *)

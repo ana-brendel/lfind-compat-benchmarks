@@ -273,7 +273,7 @@ Proof.
   + inversion H0; subst. clear H0.
   inversion H1; subst. clear H1.
   (* HELPER LEMMA $ abs_perm_by_Permutation_trans_1 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   eapply Permutation_trans.
   eassumption.

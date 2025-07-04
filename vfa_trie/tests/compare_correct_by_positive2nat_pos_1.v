@@ -78,7 +78,7 @@ Proof.
   specialize (IHx y). destruct (compare x y); lia.
   assert (positive2nat x > 0). 
   (* HELPER LEMMA $ compare_correct_by_positive2nat_pos_1 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply positive2nat_pos. lia.
   specialize (IHx y). destruct (compare x y); lia.

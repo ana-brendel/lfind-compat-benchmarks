@@ -85,7 +85,7 @@ Proof.
   induction p. intros. discriminate. 
   intros. simpl in H1. inv H1. split.
   (* HELPER LEMMA $ delete_max_Some_relate_by_Permutation_trans_1 $ *)
-    Admitted.
+    lfind. lfind. Admitted.
 (*
   apply Permutation_trans with (l' := a :: p).
   symmetry. assumption. 

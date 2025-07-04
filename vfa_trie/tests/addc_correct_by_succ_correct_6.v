@@ -50,7 +50,7 @@ Proof.
   simpl. reflexivity.
   destruct q. simpl. 
   (* HELPER LEMMA $ addc_correct_by_succ_correct_6 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   rewrite succ_correct. lia.
   simpl. lia. simpl. reflexivity.

@@ -60,7 +60,7 @@ Proof.
   intros. split.
   intros. symmetry in H0. 
   (* HELPER LEMMA $ delete_max_None_relate_by_Permutation_nil $ *)
-    Admitted.
+    lfind. lfind. Admitted.
 (*
   apply Permutation_nil in H0. rewrite H0. reflexivity.
   intros. destruct p. reflexivity. discriminate.

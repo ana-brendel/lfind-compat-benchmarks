@@ -124,7 +124,7 @@ Proof.
     -- simpl in H. inversion H. destruct (select n0 bl) eqn:Q. inversion Q.
     apply select_in in Q. 
     apply sorted_cons. 
-        Admitted.
+        lfind. Admitted.
 
     (* eapply le_all__le_one. eassumption. eassumption.
     rewrite <- H3. apply IHn.

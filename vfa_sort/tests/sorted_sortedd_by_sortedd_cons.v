@@ -97,7 +97,7 @@ Proof.
   - unfold sortedd. simpl. lia.
   - unfold sortedd. simpl. lia.
   -  (* HELPER LEMMA $ sorted_sortedd_by_sortedd_cons $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   apply sortedd_cons. assumption. assumption.
 Qed.

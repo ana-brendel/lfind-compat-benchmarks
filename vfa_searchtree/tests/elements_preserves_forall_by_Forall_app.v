@@ -121,13 +121,13 @@ Proof.
 Qed.
 
 Lemma elements_preserves_forall : forall (P : nat -> value -> Prop) (t : tree), ForallT P t -> Forall (uncurry P) (elements t).
-Proof.    Admitted.
+Proof.    lfind. Admitted.
 
 Lemma elements_preserves_forall_fixed : forall (t : tree), ForallT (fun _ v => v = Blue) t -> Forall (uncurry (fun _ v => v = Blue)) (elements t).
 Proof.
     intros. induction t. simpl. apply Forall_nil. simpl. 
     (* HELPER LEMMA $ elements_preserves_forall_by_Forall_app $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     apply Forall_app. apply IHt1. inversion H. inversion H1. assumption.
     apply Forall_cons. inversion H. simpl. assumption. apply IHt2. inversion H. inversion H1. assumption.

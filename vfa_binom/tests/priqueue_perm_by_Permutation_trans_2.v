@@ -256,7 +256,7 @@ Proof.
   (* HELPER LEMMA $ priqueue_perm_by_Permutation_trans_1 $ *)
   eapply Permutation_trans; try eassumption.
   (* HELPER LEMMA $ priqueue_perm_by_Permutation_trans_2 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply Permutation_trans with (l' := (cons_elems0 ++ rest_elems0)).
   (* HELPER LEMMA $ priqueue_perm_by_Permutation_app $ *)

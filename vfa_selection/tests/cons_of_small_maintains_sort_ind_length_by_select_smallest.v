@@ -127,7 +127,7 @@ Proof.
     eapply le_all__le_one. eassumption. eassumption.
     rewrite <- H3. apply IHn.
     --- rewrite H3. eapply select_rest_length. eassumption.
-    ---     Admitted.
+    ---     lfind. Admitted.
     
     (* eapply select_smallest. eassumption.
     --- simpl in H1. rewrite H4 in H1. inversion H1. apply sorted_nil. assumption.

@@ -62,7 +62,7 @@ Proof.
     --- apply select_perm. assumption.
     --- apply perm_skip. apply IHn. inversion H.
         symmetry. 
-            Admitted.
+            lfind. Admitted.
         
         (* eapply select_rest_length. eauto.
 Qed. *)

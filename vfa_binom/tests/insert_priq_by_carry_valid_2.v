@@ -79,7 +79,7 @@ Theorem insert_priq: forall x q, priq q -> priq (insert x q).
     right. simpl. auto.
   ++ unfold priq, insert in *.
     (* HELPER LEMMA $ insert_priq_by_carry_valid_2 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
     apply carry_valid.
     - auto.

@@ -94,7 +94,7 @@ Proof.
   * destruct q.
   ** unfold join. 
   (* HELPER LEMMA $ join_valid_by_carry_valid_2 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply carry_valid. assumption. assumption.
   ** destruct t.

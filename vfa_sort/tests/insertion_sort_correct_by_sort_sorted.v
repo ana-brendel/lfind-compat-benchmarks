@@ -68,7 +68,7 @@ Proof. split.
   (* HELPER LEMMA $ insertion_sort_correct_by_sort_perm $ *)
   apply sort_perm. 
   (* HELPER LEMMA $ insertion_sort_correct_by_sort_sorted $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   apply sort_sorted. 
 Qed.

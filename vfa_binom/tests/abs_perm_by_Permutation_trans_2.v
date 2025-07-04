@@ -276,7 +276,7 @@ Proof.
   eapply Permutation_trans.
   eassumption.
   (* HELPER LEMMA $ abs_perm_by_Permutation_trans_2 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply Permutation_trans with (l' := (cons_elems0 ++ rest_elems0)).
   clear H7 H9 H.

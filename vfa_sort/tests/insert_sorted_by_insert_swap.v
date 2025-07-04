@@ -51,7 +51,7 @@ Proof.
       assert (sorted (insert a l')). apply IHl'. rewrite <- H2. assumption.
       rewrite <- H2 in H6. 
       (* HELPER LEMMA $ insert_sorted_by_insert_swap $ *)
-    Admitted.
+    lfind. Admitted.
 (*
       rewrite <- (insert_swap y a l). assumption. lia.
 Qed.  

@@ -34,7 +34,7 @@ Theorem sort_bag: forall l, bag_eqv l (sort l).
   simpl. reflexivity.
   simpl. 
   (* HELPER LEMMA $ sort_bag_by_insert_bag $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   rewrite <- insert_bag. simpl. rewrite IHl. reflexivity.
 Qed.

@@ -60,7 +60,7 @@ Proof.
   - simpl. apply sorted_nil.
   - simpl. 
   (* HELPER LEMMA $ sort_sorted_by_insert_sorted $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   apply insert_sorted. assumption.
 Qed.

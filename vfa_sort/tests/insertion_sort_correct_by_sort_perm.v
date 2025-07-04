@@ -66,7 +66,7 @@ Qed.
 Theorem insertion_sort_correct: is_a_sorting_algorithm sort.
 Proof. split. 
   (* HELPER LEMMA $ insertion_sort_correct_by_sort_perm $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   apply sort_perm. 
   (* HELPER LEMMA $ insertion_sort_correct_by_sort_sorted $ *)

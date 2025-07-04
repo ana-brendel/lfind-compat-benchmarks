@@ -241,7 +241,7 @@ Proof.
   subst. constructor. 
   + econstructor; try eassumption.
   (* HELPER LEMMA $ priqueue_elems_ext_by_Permutation_trans $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   eapply Permutation_trans.
   symmetry; eassumption. assumption.

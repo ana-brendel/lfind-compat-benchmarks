@@ -41,7 +41,7 @@ Proof.
   destruct (n0 >? n1) eqn:k_eq.
   simpl. split; auto.
   (* HELPER LEMMA $ smash_valid_by_smash_valid_helper1 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply smash_valid_helper1.
   assumption.

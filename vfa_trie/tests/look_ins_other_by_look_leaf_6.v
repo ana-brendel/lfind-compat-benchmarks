@@ -129,7 +129,7 @@ Proof.
     rewrite (IHj k v t1). reflexivity. unfold not. intros. rewrite H0 in H. contradiction. 
   - destruct t. 
   (* HELPER LEMMA $ look_ins_other_by_look_leaf_6 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply look_leaf. reflexivity.
   - destruct t. reflexivity. reflexivity.

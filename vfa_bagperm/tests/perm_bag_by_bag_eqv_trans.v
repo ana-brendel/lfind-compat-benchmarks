@@ -45,7 +45,7 @@ Proof.
   apply bag_eqv_cons. assumption.
   - unfold bag_eqv. intros. simpl. lia.
   - (* HELPER LEMMA $ perm_bag_by_bag_eqv_trans $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   eapply bag_eqv_trans. eapply IHPermutation1. assumption.
 Qed.

@@ -68,7 +68,7 @@ Lemma selection_sort_perm: forall l, Permutation l (selection_sort l).
 Proof. 
     intros. 
     unfold selection_sort. 
-        Admitted.
+        lfind. Admitted.
 
     (* apply selsort_perm. 
     reflexivity.

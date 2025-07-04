@@ -121,7 +121,7 @@ Proof.
 Qed.
 
 Lemma elements_preserves_forall : forall (P : nat -> value -> Prop) (t : tree), ForallT P t -> Forall (uncurry P) (elements t).
-Proof.    Admitted.
+Proof.    lfind. Admitted.
 
 Lemma elements_preserves_forall_fixed : forall (t : tree), ForallT (fun _ v => v = Blue) t -> Forall (uncurry (fun _ v => v = Blue)) (elements t).
 Proof.
@@ -133,7 +133,7 @@ Qed.
 
 Lemma elements_preserves_relation : forall (k k' : nat) (v : value) (t : tree) (R : nat -> nat -> Prop),
     ForallT (fun y _ => R y k') t -> In (k, v) (elements t) -> R k k'.
-Proof.    Admitted.
+Proof.    lfind. Admitted.
 
 Lemma elements_preserves_relation_fixed : forall (k k' : nat) (v : value) (t : tree),
     ForallT (fun y _ => (fun x y => x <= y) y k') t -> In (k, v) (elements t) -> (fun x y => x <= y) k k'.
@@ -388,7 +388,7 @@ Proof.
     (* HELPER LEMMA $ kvs_insert_elements_by_elements_preserves_forall_1 $ *)
     apply elements_preserves_forall. assumption.
     (* HELPER LEMMA $ kvs_insert_elements_by_elements_preserves_forall_2 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     apply elements_preserves_forall in H0. assumption.
     simpl. 

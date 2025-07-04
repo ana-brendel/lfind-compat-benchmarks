@@ -221,7 +221,7 @@ Proof.
   (* HELPER LEMMA $ tree_perm_by_Permutation_trans_1 $ *)
   eapply Permutation_trans; try eassumption.
   (* HELPER LEMMA $ tree_perm_by_Permutation_trans_2 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   eapply Permutation_trans with (l' := (n :: bl0 ++ br0)).
   apply perm_skip.

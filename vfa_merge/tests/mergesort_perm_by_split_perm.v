@@ -143,7 +143,7 @@ Proof.
   - rewrite <- e. rewrite <- e in y. clear e. clear _x.
   apply Permutation_trans with (l' := mergesort l1 ++ mergesort l2).
   apply Permutation_trans with (l' := l1 ++ l2).
-      Admitted.
+      lfind. Admitted.
   (* apply split_perm. assumption.
   apply Permutation_app. assumption. assumption. 
   apply merge_perm.

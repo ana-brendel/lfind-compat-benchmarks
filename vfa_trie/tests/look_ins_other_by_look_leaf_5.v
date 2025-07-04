@@ -125,7 +125,7 @@ Proof.
   apply look_leaf. reflexivity.
   - destruct t. rewrite (IHj k v Leaf). 
   (* HELPER LEMMA $ look_ins_other_by_look_leaf_5 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply look_leaf. unfold not. intros. rewrite H0 in H. contradiction. 
     rewrite (IHj k v t1). reflexivity. unfold not. intros. rewrite H0 in H. contradiction. 

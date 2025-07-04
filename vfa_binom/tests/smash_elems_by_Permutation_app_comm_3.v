@@ -371,7 +371,7 @@ Proof.
   (* HELPER LEMMA $ smash_elems_by_Permutation_app_comm_2 $ *)
   apply Permutation_app_comm. simpl. apply perm_skip. 
   (* HELPER LEMMA $ smash_elems_by_Permutation_app_comm_3 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply Permutation_app_comm.
   -- contradict H0.

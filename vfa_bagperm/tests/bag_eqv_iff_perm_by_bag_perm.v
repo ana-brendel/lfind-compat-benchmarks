@@ -115,7 +115,7 @@ Theorem bag_eqv_iff_perm: forall al bl, bag_eqv al bl <-> Permutation al bl.
 Proof.
   intros. split. 
   (* HELPER LEMMA $ bag_eqv_iff_perm_by_bag_perm $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   apply bag_perm. 
   (* HELPER LEMMA $ bag_eqv_iff_perm_by_perm_bag $ *)

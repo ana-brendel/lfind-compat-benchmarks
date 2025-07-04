@@ -122,7 +122,7 @@ Proof.
   apply look_leaf. reflexivity.
   - destruct t. 
   (* HELPER LEMMA $ look_ins_other_by_look_leaf_4 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply look_leaf. reflexivity.
   - destruct t. rewrite (IHj k v Leaf). 

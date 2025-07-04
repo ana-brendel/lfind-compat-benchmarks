@@ -59,7 +59,7 @@ Proof.
     ++ simpl. destruct a. rewrite H0. assumption. rewrite H0. assumption.
     ++ destruct a. simpl. destruct t. split. left. reflexivity. apply IHq. inversion H. assumption. right.
     (* HELPER LEMMA $ carry_valid_by_smash_valid $ *)
-   Admitted.
+   lfind. Admitted.
 (*
     apply smash_valid. assumption. destruct H.
     destruct H. discriminate H. assumption. assumption. simpl.

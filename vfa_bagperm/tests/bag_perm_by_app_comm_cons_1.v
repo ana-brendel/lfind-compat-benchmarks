@@ -100,7 +100,7 @@ Proof.
   bdestruct (n0 =? a). rewrite H8. simpl. bdestruct (n =? a). lia. simpl. rewrite H7. reflexivity. rewrite H6 in H. 
   assert (count n0 (a :: al) = count n0 (n :: x ++ a :: x0)). apply H. 
   (* HELPER LEMMA $ bag_perm_by_app_comm_cons_1 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   rewrite app_comm_cons.
   (* HELPER LEMMA $ bag_perm_by_count_insert_other $ *)

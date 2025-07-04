@@ -145,6 +145,6 @@ Proof.
   apply Permutation_trans with (l' := l1 ++ l2).
   apply split_perm. assumption.
   apply Permutation_app. assumption. assumption. 
-      Admitted.
+      lfind. Admitted.
   (* apply merge_perm.
 Qed.  *)

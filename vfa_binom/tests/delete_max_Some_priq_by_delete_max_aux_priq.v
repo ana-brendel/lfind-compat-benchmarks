@@ -189,7 +189,7 @@ Proof.
   intros. unfold delete_max in H0. destruct (find_max p) eqn : F.
   - destruct (delete_max_aux n p) eqn : D. inversion H0. 
   (* HELPER LEMMA $ delete_max_Some_priq_by_delete_max_aux_priq $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply (delete_max_aux_priq _ 0) in D.
   -- inversion D. 

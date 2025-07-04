@@ -363,7 +363,7 @@ Proof.
   (* HELPER LEMMA $ smash_elems_by_app_nil_r_6 $ *)
   rewrite app_nil_r in H16. 
   (* HELPER LEMMA $ smash_elems_by_Permutation_trans_2 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply (@Permutation_trans _ _ ((n0::bl) ++ (n1::bl0))).
   * (* HELPER LEMMA $ smash_elems_by_Permutation_app_1 $ *)

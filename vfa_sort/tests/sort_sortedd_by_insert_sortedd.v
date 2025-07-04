@@ -142,7 +142,7 @@ Theorem sort_sortedd: forall l, sortedd (sort l).
 Proof.
   induction l. simpl. unfold sortedd. intros. simpl in H. lia. simpl. 
   (* HELPER LEMMA $ sort_sortedd_by_insert_sortedd $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   apply insert_sortedd. assumption.
 Qed.

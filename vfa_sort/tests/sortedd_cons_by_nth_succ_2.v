@@ -88,7 +88,7 @@ Proof.
     (* HELPER LEMMA $ sortedd_cons_by_nth_succ_1 $ *)
     rewrite nth_succ. 
     (* HELPER LEMMA $ sortedd_cons_by_nth_succ_2 $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     rewrite nth_succ. apply H0. split. inversion H1. lia. inversion H1. simpl. lia.
 Qed.

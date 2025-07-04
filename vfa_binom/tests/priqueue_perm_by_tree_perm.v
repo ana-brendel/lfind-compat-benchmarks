@@ -260,7 +260,7 @@ Proof.
   (* HELPER LEMMA $ priqueue_perm_by_Permutation_app $ *)
   - apply Permutation_app.
     (* HELPER LEMMA $ priqueue_perm_by_tree_perm $ *)
-   Admitted.
+   lfind. Admitted.
 (*
     eapply tree_perm. eassumption. assumption.
     eapply IHp. assumption. eassumption.

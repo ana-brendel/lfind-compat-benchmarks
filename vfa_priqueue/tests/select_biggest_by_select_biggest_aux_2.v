@@ -37,7 +37,7 @@ Proof.
   apply select_biggest_aux in H2. inversion H. lia. assumption. inversion H. rewrite <- H4. assumption.
   destruct (select a al) eqn:?H. pose proof H1. apply IHal in H1. inversion H. constructor.  
   (* HELPER LEMMA $ select_biggest_by_select_biggest_aux_2 $ *)
-    Admitted.
+    lfind. lfind. Admitted.
 (*
   apply select_biggest_aux in H2. lia. assumption. rewrite <- H4. assumption.
 Qed.

@@ -148,7 +148,7 @@ Proof.
     - intros. destruct al.
     -- simpl in H. lia.
     -- simpl. destruct (select n0 al) eqn:Q. 
-        Admitted.
+        lfind. Admitted.
     
     (* apply cons_of_small_maintains_sort.
     --- simpl in H. apply select_rest_length in Q. rewrite <- Q. lia.

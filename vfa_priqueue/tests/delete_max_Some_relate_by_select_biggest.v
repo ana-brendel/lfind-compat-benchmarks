@@ -95,7 +95,7 @@ Proof.
   (* HELPER LEMMA $ delete_max_Some_relate_by_forall_permutation $ *)
   apply forall_permutation with (l := q). assumption.
   (* HELPER LEMMA $ delete_max_Some_relate_by_select_biggest $ *)
-    Admitted.
+    lfind. lfind. Admitted.
 (*
   apply (select_biggest a p). assumption.
 Qed.

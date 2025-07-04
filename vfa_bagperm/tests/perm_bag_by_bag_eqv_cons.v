@@ -42,7 +42,7 @@ Proof.
   intros. induction H.
   - unfold bag_eqv. intros. reflexivity.
   - (* HELPER LEMMA $ perm_bag_by_bag_eqv_cons $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   apply bag_eqv_cons. assumption.
   - unfold bag_eqv. intros. simpl. lia.

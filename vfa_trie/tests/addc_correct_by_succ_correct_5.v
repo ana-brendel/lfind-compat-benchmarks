@@ -46,7 +46,7 @@ Proof.
   rewrite succ_correct. lia.
   simpl. 
   (* HELPER LEMMA $ addc_correct_by_succ_correct_5 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   rewrite succ_correct. lia.
   simpl. reflexivity.

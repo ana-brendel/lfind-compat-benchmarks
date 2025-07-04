@@ -156,7 +156,7 @@ Qed.
 Lemma selection_sort_sorted : forall al, sorted (selection_sort al).
 Proof. 
     unfold selection_sort. intros. 
-        Admitted.
+        lfind. Admitted.
     
     (* apply selsort_sorted. reflexivity.
 Qed. *)

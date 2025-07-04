@@ -88,7 +88,7 @@ Proof.
   apply Permutation_trans with (l' := a :: p).
   symmetry. assumption. 
   (* HELPER LEMMA $ delete_max_Some_relate_by_Permutation_trans_2 $ *)
-    Admitted.
+    lfind. lfind. Admitted.
 (*
   apply Permutation_trans with (l' := k :: q).
   (* HELPER LEMMA $ delete_max_Some_relate_by_select_perm $ *)

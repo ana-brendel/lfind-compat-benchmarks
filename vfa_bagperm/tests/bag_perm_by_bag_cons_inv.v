@@ -95,7 +95,7 @@ Proof.
   unfold bag_eqv in H. assert (count a (a :: al) = count a (n :: bl)). apply H. simpl in H1. 
   bdestruct (a =? a). bdestruct (n =? a). lia. simpl in H1.
   (* HELPER LEMMA $ bag_perm_by_bag_cons_inv $ *)
-    Admitted.
+    lfind. Admitted.
 (*
   apply bag_cons_inv in H1. inversion H1. inversion H4. inversion H5.
   assert (Permutation al (n :: x ++ x0)). apply IHal. unfold bag_eqv. intros.

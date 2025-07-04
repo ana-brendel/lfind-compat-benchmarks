@@ -45,7 +45,7 @@ Proof.
   assumption.
   simpl. split; auto.
   (* HELPER LEMMA $ smash_valid_by_smash_valid_helper2 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply smash_valid_helper2.
   assumption.

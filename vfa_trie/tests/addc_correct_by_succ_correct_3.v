@@ -36,7 +36,7 @@ Proof.
   simpl. specialize (IHp false q). simpl in IHp. lia.
   simpl. 
   (* HELPER LEMMA $ addc_correct_by_succ_correct_3 $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   rewrite succ_correct. lia.
   destruct q. simpl. specialize (IHp false q). simpl in IHp. lia.

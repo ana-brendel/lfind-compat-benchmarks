@@ -203,7 +203,7 @@ Proof.
     inversion H0; subst.
     econstructor. exact H4. exact H6.
     (* HELPER LEMMA $ tree_elems_ext_by_Permutation_trans $ *)
-   Admitted.
+   lfind. Admitted.
 (*
     apply Permutation_trans with (l' := e1).
     rewrite H. reflexivity. assumption.

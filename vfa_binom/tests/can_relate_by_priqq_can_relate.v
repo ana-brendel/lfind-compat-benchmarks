@@ -316,7 +316,7 @@ Theorem can_relate:  forall p, priq p -> exists al, Abs p al.
 Proof.
   intros. 
   (* HELPER LEMMA $ can_relate_by_priqq_can_relate $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   eapply priqq_can_relate. apply H.
 Qed.

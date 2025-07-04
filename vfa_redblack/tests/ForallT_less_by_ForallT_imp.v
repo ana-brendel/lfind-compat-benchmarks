@@ -44,7 +44,7 @@ Lemma ForallT_less : forall (t : tree) k k0, ForallT (fun k' _ => k' < k) t  -> 
 Proof.
     intros. 
     (* HELPER LEMMA $ ForallT_less_by_ForallT_imp $ *)
-    Admitted.
+    lfind. Admitted.
 (*
     eapply ForallT_imp; eauto.
     intros. simpl in H1. lia.

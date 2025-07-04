@@ -192,7 +192,7 @@ Proof.
   apply (delete_max_aux_priq _ 0) in D.
   -- inversion D. 
   (* HELPER LEMMA $ delete_max_Some_priq_by_join_valid $ *)
-   Admitted.
+   lfind. Admitted.
 (*
   apply join_valid. assumption. assumption. left. reflexivity.
   -- assumption.

@@ -142,7 +142,7 @@ Proof.
   - auto.
   - rewrite <- e. rewrite <- e in y. clear e. clear _x.
   apply Permutation_trans with (l' := mergesort l1 ++ mergesort l2).
-      Admitted.
+      lfind. Admitted.
   (* apply Permutation_trans with (l' := l1 ++ l2).
   apply split_perm. assumption.
   apply Permutation_app. assumption. assumption. 

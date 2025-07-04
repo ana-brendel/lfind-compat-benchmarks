@@ -207,7 +207,7 @@ Proof.
     rewrite H. reflexivity. assumption.
     inversion H0; subst.
     (* HELPER LEMMA $ tree_elems_ext_by_Permutation_nil $ *)
-   Admitted.
+   lfind. Admitted.
 (*
     apply Permutation_nil in H.
     subst. assumption.
