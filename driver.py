@@ -2,6 +2,11 @@ import os
 import sys
 
 read = lambda x: open(x, "r").read().split("\n")
+def read(x):
+    f = open(x, "r")
+    content = f.read()
+    f.close()
+    return content.split("\n")
 
 def write(file,content):
     f = open(file, "w")
