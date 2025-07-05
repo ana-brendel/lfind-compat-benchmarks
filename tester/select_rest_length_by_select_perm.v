@@ -1,10 +1,10 @@
 (** * Selection:  Selection Sort *)
 (* Some proofs from: https://github.com/kolya-vasiliev/verified-functional-algorithms-2019/blob/master/Selection.v *)
 
-(* Load LFindLoad.
+Load LFindLoad.
 From lfind Require Import LFind.
 Unset Printing Notations.
-Set Printing Implicit. *)
+Set Printing Implicit.
 
 (* Require Import vfa_selection_benchmarks.Definitions.
 From vfa_selection_benchmarks Require Import Decide. *)
@@ -43,6 +43,13 @@ Inductive Permutation : listnat -> listnat -> Prop :=
 | perm_trans l l' l'' :
     Permutation l l' -> Permutation l' l'' -> Permutation l l''.
 
+
+Fixpoint length (l:listnat) : nat :=
+    match l with
+      | nil => 0
+      | cons _ m => S (length m)
+    end.
+
 (* ################################################################# *)
 
 (* Lemma select_perm: forall x l y r, select x l = (y, r) -> Permutation (cons x l) (cons y r).
@@ -67,7 +74,7 @@ Qed. *)
 Lemma select_rest_length : forall x l y r, select x l = (y, r) -> length l = length r.
 Proof.
     intros. 
-        lfind. Admitted.
+    Admitted.
 
     (* apply select_perm in H.
     apply Permutation_length in H. 
