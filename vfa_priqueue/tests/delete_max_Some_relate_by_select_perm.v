@@ -90,7 +90,7 @@ Proof.
   (* HELPER LEMMA $ delete_max_Some_relate_by_Permutation_trans_2 $ *)
   apply Permutation_trans with (l' := k :: q).
   (* HELPER LEMMA $ delete_max_Some_relate_by_select_perm $ *)
-    lfind. lfind. Admitted.
+    lfind. Admitted.
 (*
   apply select_perm. assumption. 
   apply perm_skip. assumption.
