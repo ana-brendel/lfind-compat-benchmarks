@@ -51,7 +51,7 @@ Qed.
 Lemma balance_BST : forall (c : color) (l : tree) (k : nat) (v : value) (r : tree),
     ForallT (fun k' _ => k' < k) l -> ForallT (fun k' _ => k' > k) r -> BST l -> BST r -> BST (balance c l k v r).
 Proof.
-    intros. unfold balance.    lfind. Admitted.
+    intros. unfold balance. Admitted.
     (* repeat
     (match goal with
         |  |- BST  (match ?c with Red => _ | Black => _ end)  => destruct c
@@ -67,7 +67,7 @@ Qed. *)
 Lemma balanceP : forall (P : nat -> value -> Prop) (c : color) (l r : tree) (k : nat) (v : value),
     ForallT P l -> ForallT P r -> P k v -> ForallT P (balance c l k v r).
 Proof.
-    intros. unfold balance.    lfind. Admitted.
+    intros. unfold balance. Admitted.
     (* repeat
     (match goal with
         |  |- ForallT P (match ?c with Red => _ | Black => _ end)  => destruct c
@@ -80,7 +80,7 @@ Proof.
 Qed. *)
 
 Lemma insP : forall (P : nat -> value -> Prop) (t : tree) (k : nat) (v : value), ForallT P t -> P k v -> ForallT P (ins k v t).
-Proof.    lfind. Admitted.
+Proof. Admitted.
 
 Lemma insP_fixed : forall (t : tree) (k : nat) (v : value), ForallT (fun x _ => 0 < x) t -> (fun x _ => 0 < x) k v -> ForallT (fun x _ => 0 < x) (ins k v t).
 Proof.
@@ -136,7 +136,7 @@ Qed.
 
 Lemma elements_trP : forall (P : nat -> value -> Prop) (t : tree) (l : list (nat * value)),
     ForallT P t -> Forall (uncurry P) l -> Forall (uncurry P) (elements_tr t l). 
-Proof.    lfind. Admitted.
+Proof. Admitted.
 
 Lemma elements_trP_fixed : forall (t : tree) (l : list (nat * value)),
     ForallT (fun x _ => 2 < x) t -> Forall (uncurry (fun x _ => 2 < x)) l -> Forall (uncurry (fun x _ => 2 < x)) (elements_tr t l).
@@ -150,7 +150,7 @@ Qed.
 
 Lemma elementsP : forall (P : nat -> value -> Prop) (t : tree),
     ForallT P t -> Forall (uncurry P) (elements t).
-Proof.    lfind. Admitted.
+Proof. Admitted.
 
 Lemma elementsP_fixed : forall (t : tree), ForallT (fun x _ => 2 < x) t -> Forall (uncurry (fun x _ => 2 < x)) (elements t).
 Proof.
