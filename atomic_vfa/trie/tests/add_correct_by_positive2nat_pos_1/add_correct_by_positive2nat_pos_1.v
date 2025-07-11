@@ -1,7 +1,7 @@
-(* Load LFindLoad.
+Load LFindLoad.
 From lfind Require Import LFind.
 Unset Printing Notations.
-Set Printing Implicit. *)
+Set Printing Implicit.
 
 From QuickChick Require Import QuickChick.
 Require Import Arith.
@@ -37,10 +37,16 @@ Notation "p ~ 1" := (xI p)
  Notation "p ~ 0" := (xO p)
   (at level 7, left associativity, format "p '~' '0'").
 
+Fixpoint plus (plus_arg0 : nat) (plus_arg1 : nat) : nat
+           := match plus_arg0, plus_arg1 with
+              | O, n => n
+              | S n, m => S (plus n m)
+              end.
+
 Fixpoint positive2nat (p: positive) : nat :=
   match p with
-  | xI q => 1 + 2 * positive2nat q
-  | xO q => 0 + 2 * positive2nat q
+  | xI q => plus 1 (2 * positive2nat q)
+  | xO q => plus 0 (2 * positive2nat q)
   | xH => 1
  end.
 
@@ -156,44 +162,10 @@ Definition insert (i: positive) (a: LFType) (t: trie_table) : trie_table := (fst
 Lemma succ_correct: forall p, positive2nat (succ p) = S (positive2nat p).
 Proof. Admitted.
 
-Lemma addc_correct: forall (c: bool) (p q: positive), positive2nat (addc c p q) = (if c then 1 else 0) + positive2nat p + positive2nat q.
-Proof.
-  intros c p. generalize dependent c. induction p. intros. simpl. destruct c. destruct q.
-  simpl. specialize (IHp true q). simpl in IHp. lia.
-  simpl. specialize (IHp true q). simpl in IHp. lia.
-  simpl. 
-  (* HELPER LEMMA $ addc_correct_by_succ_correct_1 $ *)
-  rewrite succ_correct. lia.
-  destruct q. simpl. specialize (IHp true q). simpl in IHp. lia.
-  simpl. specialize (IHp false q). simpl in IHp. lia.
-  simpl. 
-  (* HELPER LEMMA $ addc_correct_by_succ_correct_2 $ *)
-  rewrite succ_correct. lia.
-  intros. simpl. destruct c. destruct q.
-  simpl. specialize (IHp true q). simpl in IHp. lia.
-  simpl. specialize (IHp false q). simpl in IHp. lia.
-  simpl. 
-  (* HELPER LEMMA $ addc_correct_by_succ_correct_3 $ *)
-  rewrite succ_correct. lia.
-  destruct q. simpl. specialize (IHp false q). simpl in IHp. lia.
-  simpl. specialize (IHp false q). simpl in IHp. lia.
-  simpl. lia.
-  intros. simpl. destruct c. destruct q.
-  simpl.  
-  (* HELPER LEMMA $ addc_correct_by_succ_correct_4 $ *)
-  rewrite succ_correct. lia.
-  simpl. 
-  (* HELPER LEMMA $ addc_correct_by_succ_correct_5 $ *)
-  rewrite succ_correct. lia.
-  simpl. reflexivity.
-  destruct q. simpl. 
-  (* HELPER LEMMA $ addc_correct_by_succ_correct_6 $ *)
-  rewrite succ_correct. lia.
-  simpl. lia. simpl. reflexivity.
-Qed.
-  
+Lemma addc_correct: forall (c: bool) (p q: positive), positive2nat (addc c p q) = plus (plus (if c then 1 else 0)  (positive2nat p)) (positive2nat q).
+Proof. Admitted.
 
-Theorem add_correct: forall (p q: positive), positive2nat (add p q) = positive2nat p + positive2nat q.
+Theorem add_correct: forall (p q: positive), positive2nat (add p q) = plus (positive2nat p) (positive2nat q).
 Proof. 
   intros. unfold add. 
   (* HELPER LEMMA $ add_correct_by_positive2nat_pos_1 $ *)
