@@ -1,7 +1,11 @@
-Load LFindLoad.
+(* Load LFindLoad.
 From lfind Require Import LFind.
 Unset Printing Notations.
-Set Printing Implicit.
+Set Printing Implicit. *)
+
+From Coq Require Export Arith.Arith.
+
+From QuickChick Require Import QuickChick.
 
 Fixpoint geb n m : bool :=
   match n, m with
@@ -57,6 +61,30 @@ Proof. Admitted.
 Definition priq (p: listnat) := True.
 
 Definition Abs (p : listnat) (kl : listnat) := Permutation p kl.
+
+Lemma forall_inv : forall P a l, Forall P (cons a l) -> P a. Proof. Admitted.
+
+Lemma forall_inv_tail : forall P a l, Forall P (cons a l) -> Forall P l. Proof. Admitted.
+
+(* --------------------------------------------------------------------------------------------------------- *)
+
+Instance Forall_ge_dec (n : nat) (l : listnat) : Dec (Forall (fun x : nat => n >= x) l).
+Proof. 
+dec_eq. induction l.
+- left. apply Forall_nil.
+- destruct IHl.
++ assert (P: {(fun x : nat => n >= x) n0} + {~ (fun x : nat => n >= x) n0}). apply ge_dec. destruct P.
+++ left. apply Forall_cons. auto. auto.
+++ right. unfold not. intros. unfold not in n1. apply n1. apply forall_inv in H. auto.
++ right. unfold not; intros. unfold not in n1. apply n1. apply forall_inv_tail in H. auto.
+Qed.
+
+Instance Abs_dec (p : list nat) (kl : list nat): Dec (Abs p kl).
+Proof. dec_eq. unfold Abs. apply Permutation_dec. Qed.
+
+Instance priq_dec (p : list nat) : Dec (priq p).
+Proof. dec_eq. unfold priq. auto. Qed.
+(* --------------------------------------------------------------------------------------------------------- *)
 
 Lemma delete_max_Some_relate: forall (p q: listnat) k (pl ql: listnat), priq p ->
   Abs p pl -> delete_max p = Some (k,q) -> Abs q ql -> Permutation pl (cons k ql) /\ Forall (ge k) ql.

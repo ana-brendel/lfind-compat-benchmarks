@@ -1,70 +1,55 @@
 import os
 import sys
-from pathlib import Path
+import shutil
 
-# def read(x):
-#     f = open(x, "r")
-#     content = f.read()
-#     f.close()
-#     return content.split("\n")
+mono = [
+    "perm",
+    "bagperm",
+    "binom",
+    "redblack",
+    "trie"
+]
 
-def read(x):
-    content = Path(x).read_text()
-    return content.split("\n")
+folder = "/Users/anabrendel/Desktop/lfind-compat-benchmarks/atomic_vfa"
 
 def write(file,content):
     f = open(file, "w")
     f.write(content)
     f.close()
 
-imports = "Load LFindLoad.\nFrom lfind Require Import LFind.\nUnset Printing Notations.\nSet Printing Implicit."
-original_imports = "From LFindToo Require Import LFindToo."
+def coq_makefile(suite,suite_folder,test):
+    test_folders = os.path.join(suite_folder,"tests")
+    test_name = test.removesuffix(".v")
+    test_dir = os.path.join(test_folders,test_name)
+    content = f"-R . vfa_{suite}_{test_name}\n\n{test}"
+    os.system(f"mkdir {test_dir}")
+    coq_project = os.path.join(test_dir,"_CoqProject")
+    os.system(f"touch {coq_project}")
+    write(coq_project,content)
+    return test_dir
 
-lfind = "lfind."
-admitted = "Admitted."
+def set_up():
+    for suite in mono:
+        suite_folder = os.path.join(folder,suite)
+        for test in os.listdir(suite_folder):
+            if test.endswith(".v"):
+                test_dir = coq_makefile(suite,suite_folder,test)
+                src = os.path.join(suite_folder,test)
+                dst = os.path.join(test_dir,test)
+                shutil.copy(src,dst)
 
-path = os.getcwd()
+def make_makefiles():
+    for suite in mono:
+        suite_folder = os.path.join(folder,suite)
+        test_folders = os.path.join(suite_folder,"tests")
+        for test in os.listdir(test_folders):
+            full_test = os.path.join(test_folders,test)
+            os.system(f"cd {full_test} && coq_makefile -f _CoqProject -o Makefile")
 
-def flipping(arg):
-    add_tactic = arg == "add_tactic"
-    for suite in os.listdir(path):
-        if suite.startswith("vfa"):
-            full_suite = os.path.join(path,suite)
-            tests = os.path.join(full_suite,"tests")
-            for test in os.listdir(tests):
-                full_test = os.path.join(tests,test)
-                test_content = read(full_test)
-                to_replace = admitted if add_tactic else lfind
-                replace_with = (lfind + " " + admitted) if add_tactic else ""
-                rp = lambda l: l.replace(to_replace, replace_with)
-                updated = list(map(rp,test_content))
-                write(full_test,"\n".join(updated))
-
-def make_tests():
-    for suite in os.listdir(path):
-        if suite.startswith("vfa"):
-            full_suite = os.path.join(path,suite)
-            tests = os.path.join(full_suite,"tests")
-            make_makefile = f"cd {tests} && coq_makefile -f _CoqProject -o Makefile"
-            make = f"cd {tests} && make && make install"
-            os.system(make_makefile)
-            os.system(make)
-
-def make_common():
-    for suite in os.listdir(path):
-        if suite.startswith("vfa"):
-            full_suite = os.path.join(path,suite)
-            common = os.path.join(full_suite,"common")
-            make_makefile = f"cd {common} && coq_makefile -f _CoqProject -o Makefile"
-            make = f"cd {common} && make && make install"
-            os.system(make_makefile)
-            os.system(make)
-
-if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "make":
-        make_tests()
-    elif len(sys.argv) > 1 and sys.argv[1] == "make_common":
-        make_common()
-    else:
-        arg = "" if len(sys.argv) == 1 else sys.argv[1]
-        flipping(arg)
+def make_monos():
+    for suite in mono:
+        suite_folder = os.path.join(folder,suite)
+        test_folders = os.path.join(suite_folder,"tests")
+        for test in os.listdir(test_folders):
+            full_test = os.path.join(test_folders,test)
+            os.system(f"cd {full_test} && make")

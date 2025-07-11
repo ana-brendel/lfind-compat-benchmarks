@@ -1,0 +1,3 @@
+-R . vfa_trie_compare_correct_by_positive2nat_pos_1
+
+compare_correct_by_positive2nat_pos_1.v
