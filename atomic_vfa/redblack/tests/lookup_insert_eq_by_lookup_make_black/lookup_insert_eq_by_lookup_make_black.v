@@ -1,7 +1,7 @@
-(* Load LFindLoad.
+Load LFindLoad.
 From lfind Require Import LFind.
 Unset Printing Notations.
-Set Printing Implicit. *)
+Set Printing Implicit.
 
 From QuickChick Require Import QuickChick.
 Require Import Arith.
@@ -18,11 +18,11 @@ Inductive tree : Type :=
 
 Definition empty_tree : tree := E.
 
-Fixpoint lookup (default : value) (x: nat) (t : tree) : value :=
+Fixpoint lookup (default : value) (t : tree) (x: nat) : value :=
     match t with
     | E => default
-    | T _ tl k v tr => if x <? k then lookup default x tl
-                    else if k <? x then lookup default x tr
+    | T _ tl k v tr => if x <? k then lookup default tl x
+                    else if k <? x then lookup default tr x
                             else v
     end.
 
@@ -50,15 +50,15 @@ Definition balance (rb : color) (t1 : tree) (k : nat) (vk : value) (t2 : tree) :
         end
     end.
 
-Fixpoint ins (x : nat) (vx : value) (t : tree) : tree :=
+Fixpoint ins (x : nat) (t : tree) (vx : value) : tree :=
     match t with
     | E => T Red E x vx E
-    | T c a y vy b => if x <? y then balance c (ins x vx a) y vy b
-                    else if y <? x then balance c a y vy (ins x vx b)
+    | T c a y vy b => if x <? y then balance c (ins x a vx) y vy b
+                    else if y <? x then balance c a y vy (ins x b vx)
                             else T c a x vx b
     end.
 
-Definition insert (x : nat) (vx : value) (t : tree) := make_black (ins x vx t).
+Definition insert (x : nat) (vx : value) (t : tree) := make_black (ins x t vx).
 
 Fixpoint ForallT (P : nat -> value -> Prop) (t : tree) {struct t} : Prop :=
   match t with
@@ -105,10 +105,10 @@ Proof.
   + right. unfold not. intros. inversion H. contradiction.
 Qed.
 
-Lemma lookup_make_black : forall (default : value) (t : tree) (k : nat), lookup default k (make_black t) = lookup default k t.
+Lemma lookup_make_black : forall (default : value) (t : tree) (k : nat), lookup default (make_black t) k = lookup default t k.
 Proof. intros. destruct t; simpl; auto. Qed.
 
-Theorem lookup_insert_eq : forall (default : value) (t : tree) (k : nat) (v : value), BST t -> lookup default k (insert k v t) = v.
+Theorem lookup_insert_eq : forall (default : value) (t : tree) (k : nat) (v : value), BST t -> lookup default (insert k v t) k = v.
 Proof.
     intros. unfold insert. 
     (* HELPER LEMMA $ lookup_insert_eq_by_lookup_make_black $ *)
