@@ -1,7 +1,7 @@
-Load LFindLoad.
+(* Load LFindLoad.
 From lfind Require Import LFind.
 Unset Printing Notations.
-Set Printing Implicit.
+Set Printing Implicit. *)
 
 From QuickChick Require Import QuickChick.
 Require Import Arith.
@@ -120,36 +120,36 @@ Definition trie_table : Type := (LFType * trie)%type.
 
 Definition empty (default: LFType) : trie_table := (default, Leaf).
 
-Fixpoint look (default: LFType) (i: positive) (m: trie): LFType :=
+Fixpoint look (default: LFType) (m: trie) (i: positive) : LFType :=
     match m with
     | Leaf => default
     | Node l x r =>
         match i with
         | xH => x
-        | xO i' => look default i' l
-        | xI i' => look default i' r
+        | xO i' => look default l i'
+        | xI i' => look default r i' 
         end
     end.
 
-Definition lookup (i: positive) (t: trie_table) : LFType := look (fst t) i (snd t).
+Definition lookup (i: positive) (t: trie_table) : LFType := look (fst t) (snd t) i.
 
-Fixpoint ins default (i: positive) (a: LFType) (m: trie): trie :=
+Fixpoint ins default (i: positive) (m: trie) (a: LFType) : trie :=
     match m with
     | Leaf =>
         match i with
         | xH => Node Leaf a Leaf
-        | xO i' => Node (ins default i' a Leaf) default Leaf
-        | xI i' => Node Leaf default (ins default i' a Leaf)
+        | xO i' => Node (ins default i' Leaf a) default Leaf
+        | xI i' => Node Leaf default (ins default i' Leaf a)
         end
     | Node l o r =>
         match i with
         | xH => Node l a r
-        | xO i' => Node (ins default i' a l) o r
-        | xI i' => Node l o (ins default i' a r)
+        | xO i' => Node (ins default i' l a) o r
+        | xI i' => Node l o (ins default i' r a)
         end
     end.
 
-Definition insert (i: positive) (a: LFType) (t: trie_table) : trie_table := (fst t, ins (fst t) i a (snd t)).
+Definition insert (i: positive) (a: LFType) (t: trie_table) : trie_table := (fst t, ins (fst t) i (snd t) a).
 
 (* ################################################################# *)
 
