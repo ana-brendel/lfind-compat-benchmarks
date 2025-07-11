@@ -10,11 +10,26 @@ Inductive value :=
 | Positive : nat -> value
 | Negative : nat -> value.
 
+Derive Show for value. 
+Derive Arbitrary for value.  
+Instance Dec_Eq_value : Dec_Eq value. 
+Proof. dec_eq. Qed.
+
 Inductive color := Red | Black.
+
+Derive Show for color. 
+Derive Arbitrary for color.  
+Instance Dec_Eq_color : Dec_Eq color. 
+Proof. dec_eq. Qed.
 
 Inductive tree : Type :=
 | E : tree
 | T : color -> tree -> nat -> value -> tree -> tree.
+
+Derive Show for tree. 
+Derive Arbitrary for tree.  
+Instance Dec_Eq_tree : Dec_Eq tree. 
+Proof. dec_eq. Qed.
 
 Definition empty_tree : tree := E.
 
