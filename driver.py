@@ -10,7 +10,7 @@ mono = [
     "trie"
 ]
 
-folder = "/Users/anabrendel/Desktop/lfind-compat-benchmarks/atomic_vfa"
+folder = os.path.join(os.getcwd(),"atomic_vfa")
 
 def write(file,content):
     f = open(file, "w")
