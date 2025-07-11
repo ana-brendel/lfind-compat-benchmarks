@@ -1,7 +1,7 @@
-Load LFindLoad.
+(* Load LFindLoad.
 From lfind Require Import LFind.
 Unset Printing Notations.
-Set Printing Implicit.
+Set Printing Implicit. *)
 
 From QuickChick Require Import QuickChick.
 Require Import Arith.
@@ -66,7 +66,18 @@ Fixpoint ForallT (P : nat -> value -> Prop) (t : tree) {struct t} : Prop :=
   | T _ l k v r => P k v /\ ForallT P l /\ ForallT P r
   end.
 
-(* Proof of decidability for ForallT *)
+Instance ForallT_dec (P: nat -> value -> Prop) `{forall (k : nat) (x : value), Dec (P k x)} (t: tree) : (Dec (ForallT P t)).
+Proof. 
+  dec_eq. induction t.
+  - left. simpl. auto.
+  - simpl.
+  + assert (Q: {P n v} + {~ P n v}). apply H. destruct Q.
+  destruct IHt1. destruct IHt2. 
+  left. auto. 
+  right. unfold not. intros. destruct H0. destruct H1. contradiction. 
+  right. unfold not. intros. destruct H0. destruct H1. contradiction.
+  right. unfold not. intros. destruct H0. contradiction.
+Qed.
 
 Inductive BST : tree -> Prop :=
 | BST_E : BST E
@@ -77,7 +88,22 @@ Inductive BST : tree -> Prop :=
     BST r ->
     BST (T c l k v r).
 
-(* Proof of decidability for BST *)
+Instance BST_dec (t: tree) : (Dec (BST t)).
+Proof. 
+  dec_eq. induction t.
+  - left. apply BST_E.
+  - assert (Q1: {ForallT (fun (y : nat) (_ : value) => y < n) t1} + {~ ForallT (fun (y : nat) (_ : value) => y < n) t1}).
+  apply ForallT_dec. intros. dec_eq. apply lt_dec. 
+  assert (Q2: {ForallT (fun (y : nat) (_ : value) => n < y) t2} + {~ ForallT (fun (y : nat) (_ : value) => n < y) t2}).
+  apply ForallT_dec. intros. dec_eq. apply lt_dec.
+  destruct IHt1. 
+  + destruct IHt2. destruct Q1. destruct Q2.
+  ++ left. apply BST_T. auto. auto. auto. auto.
+  ++ right. unfold not. intros. inversion H. contradiction.
+  ++ right. unfold not. intros. inversion H. contradiction.
+  ++ right. unfold not. intros. inversion H. contradiction.
+  + right. unfold not. intros. inversion H. contradiction.
+Qed.
 
 Lemma lookup_make_black : forall (default : value) (t : tree) (k : nat), lookup default k (make_black t) = lookup default k t.
 Proof. intros. destruct t; simpl; auto. Qed.
